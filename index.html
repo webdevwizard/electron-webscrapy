@@ -1,19 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
 
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <title>Web Scrapping</title>
+
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/custom.css">
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main-frm" id="main-frm">
+      <h3>Fetch Data Form</h3>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Base URL</span>
+        </div>
+        <input type="text" class="form-control" id="reqBaseUrl">
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Start ID</span>
+        </div>
+        <input type="text" class="form-control" id="reqId">
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Count</span>
+        </div>
+        <input type="text" class="form-control" id="reqCount">
+      </div>
+      <button class="btn btn-primary" id="run-command">
+        <div class="spinner-border d-none" role="status" id="run-command-spinner"></div>
+        Run
+      </button>
+
+      <div class="alert alert-primary d-none" id='alert-message'>
+        <span class="closebtn">&times;</span>
+        <span id='result-message'>Indicates a dangerous or potentially negative action.</span>
+      </div>
+    </div>
     <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
-  </body>
+  </div>
+
+  <script src="./renderer.js"></script>
+</body>
+
 </html>
